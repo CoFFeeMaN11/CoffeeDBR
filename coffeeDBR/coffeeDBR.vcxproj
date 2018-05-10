@@ -143,6 +143,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\cml_matrix2\cml_matrix2.h" />
+    <ClInclude Include="src\cml_ncgm\betaFunc.h" />
+    <ClInclude Include="src\cml_ncgm\betaFuncs.h" />
+    <ClInclude Include="src\cml_ncgm\cml_ncgm.h" />
+    <ClInclude Include="src\cml_ncgm\fletcherReeves.h" />
+    <ClInclude Include="src\cml_oneMin\cml_golden.h" />
+    <ClInclude Include="src\cml_oneMin\cml_oneMin.h" />
+    <ClInclude Include="src\cml_vector\cml_Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cml_matrix2\cml_matrix2.cpp" />
+    <ClCompile Include="src\cml_ncgm\cml_ncgm.cpp" />
+    <ClCompile Include="src\cml_ncgm\fletcherReeves.cpp" />
+    <ClCompile Include="src\cml_oneMin\cml_golden.cpp" />
+    <ClCompile Include="src\cml_oneMin\cml_oneMin.cpp" />
+    <ClCompile Include="src\cml_vector\cml_Vector.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
