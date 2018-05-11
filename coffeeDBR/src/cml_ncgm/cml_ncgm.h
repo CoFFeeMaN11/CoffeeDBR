@@ -9,15 +9,15 @@ class ConjugeteGradientSolve
 public:
 	
 	ConjugeteGradientSolve(size_t xSize);
-	void SetFunction(int (*f)(const cml::Vector&, void*, long double&))
+	void SetFunction(int (*f)(const cml::Vector<long double,2>&, void*, long double&))
 	{
 		func = f;
 	}
-	const cml::Vector&  GetX() const
+	const cml::Vector<long double, 2>&  GetX() const
 	{
 		return xvector;
 	}
-	const cml::Vector&  GetStep() const
+	const cml::Vector<long double, 2>&  GetStep() const
 	{
 		return step;
 	}
@@ -27,23 +27,23 @@ public:
 		return params;
 	}
 	virtual ~ConjugeteGradientSolve();
-	void StartSolve(cml::Vector _startPoint);
+	void StartSolve(cml::Vector<long double, 2> _startPoint);
 	void Iteration();
 private:
-	cml::Vector Gradient(cml::Vector point);
-	long double Partial(cml::Vector dir, cml::Vector point);
+	cml::Vector<long double, 2> Gradient(cml::Vector<long double, 2> point);
+	long double Partial(cml::Vector<long double, 2> dir, cml::Vector<long double, 2> point);
 	friend int oneDFunction(long double alpha, void* params, long double& result);
 private:
-	int (*func)(const cml::Vector&, void*, long double&);
+	int (*func)(const cml::Vector<long double, 2>&, void*, long double&);
 	IBetaFunction *betaF;
 	IOneMin *minFinder;
 	size_t n;
 	void *params;
 	long double gradientStep;
-	cml::Vector lastDir;
-	cml::Vector currDir;
-	cml::Vector betaInput[3];
-	cml::Vector xvector;
-	cml::Vector step;
+	cml::Vector<long double, 2> lastDir;
+	cml::Vector<long double, 2> currDir;
+	cml::Vector<long double, 2> betaInput[3];
+	cml::Vector<long double, 2> xvector;
+	cml::Vector<long double, 2> step;
 };
 #endif

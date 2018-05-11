@@ -3,13 +3,13 @@
 int oneDFunction(long double alpha, void* params, long double& result)
 {
 	ConjugeteGradientSolve *cgs = (ConjugeteGradientSolve*)params;
-	cml::Vector t = (cgs->GetStep() * alpha);
+	cml::Vector<long double, 2> t = (cgs->GetStep() * alpha);
 	cgs->func(cgs->GetX() + t, cgs->params, result);
 	return 0;
 }
 
-ConjugeteGradientSolve::ConjugeteGradientSolve(size_t xSize) : params(0), xvector(xSize), func(0),
-																gradientStep(1e-15), lastDir(xSize), currDir(xSize),step(xSize), n(2), betaF(0), minFinder(0)
+ConjugeteGradientSolve::ConjugeteGradientSolve(size_t xSize) : params(0), xvector(), func(0),
+																gradientStep(1e-11), lastDir(), currDir(),step(), n(2), betaF(0), minFinder(0)
 {
 }
 
@@ -35,14 +35,14 @@ ConjugeteGradientSolve::~ConjugeteGradientSolve()
 	}
 }
 
-void ConjugeteGradientSolve::StartSolve(cml::Vector _startPoint)
+void ConjugeteGradientSolve::StartSolve(cml::Vector<long double, 2> _startPoint)
 {
 	if(!betaF)
 		betaF = new Fletcher();
 	if(!minFinder)
 		minFinder = new GoldenSec();
 
-	cml::Vector direction = this->Gradient(_startPoint)* -1.L;
+	cml::Vector<long double, 2> direction = this->Gradient(_startPoint)* -1.L;
 	lastDir = direction;
 	step = direction;
 
@@ -56,13 +56,12 @@ void ConjugeteGradientSolve::StartSolve(cml::Vector _startPoint)
 	} while (minFinder->NotEnough() && ++n <1000);
 	assert(n < 1000);
 	long double mini = minFinder->GetMin();
-	printf("%f\t%f\n", direction[0], direction[1]);
 	this->xvector = _startPoint + direction * mini;
 }
 
 void ConjugeteGradientSolve::Iteration()
 {
-	cml::Vector currDir =  this->Gradient(this->xvector)* -1.L;
+	cml::Vector<long double, 2> currDir =  this->Gradient(this->xvector)* -1.L;
 	betaInput[0] = currDir;
 	betaInput[1] = lastDir;
 	betaInput[2] = step;
@@ -77,26 +76,23 @@ void ConjugeteGradientSolve::Iteration()
 	} while (minFinder->NotEnough() && ++n < 1000 );
 	assert(n < 1000);
 	xvector = xvector + step * minFinder->GetMin();
-	 
-	printf("ls: %f %fi\n", lastDir[0], lastDir[1]);
-	printf("cs: %f %fi\n\n", currDir[0], currDir[1]);
 }
 
-cml::Vector ConjugeteGradientSolve::Gradient(cml::Vector point)
+cml::Vector<long double, 2> ConjugeteGradientSolve::Gradient(cml::Vector<long double, 2> point)
 {	
-	cml::Vector result(n);
-	for (int i = 0; i < n; i++)
-		result[i] = Partial(cml::Vector::Unit(n, i), point);
+	cml::Vector<long double, 2> result;
+	for (int i = 0; i < 2; i++)
+		result[i] = Partial(cml::Vector<long double, 2>::Unit(i), point);
 	return result;
 }
 
-long double ConjugeteGradientSolve::Partial(cml::Vector dir, cml::Vector point)
+long double ConjugeteGradientSolve::Partial(cml::Vector<long double, 2> dir, cml::Vector<long double, 2> point)
 {
 	assert(func);
 	long double f1, f2;
-	assert(!func(point + dir * gradientStep, params, f1));
-	assert(!func(point - dir * gradientStep,params, f2));
-	return (f1 - f2)/(2 * gradientStep);
+	assert(!func(point + (dir * gradientStep), params, f1));
+	assert(!func(point,params, f2));
+	return (f1 - f2)/(gradientStep);
 }
 
 
