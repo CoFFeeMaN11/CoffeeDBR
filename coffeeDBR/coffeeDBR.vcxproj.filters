@@ -24,17 +24,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cml_matrix2\cml_matrix2.cpp">
-      <Filter>cml_matrix2</Filter>
-    </ClCompile>
     <ClCompile Include="src\cml_ncgm\cml_ncgm.cpp">
       <Filter>cml_ncgm</Filter>
     </ClCompile>
     <ClCompile Include="src\cml_ncgm\fletcherReeves.cpp">
       <Filter>cml_ncgm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cml_vector\cml_Vector.cpp">
-      <Filter>cml_vector</Filter>
     </ClCompile>
     <ClCompile Include="src\cml_oneMin\cml_golden.cpp">
       <Filter>cml_oneMin</Filter>
@@ -51,6 +45,7 @@
     <ClCompile Include="src\dbr_parser\dbrParser.cpp">
       <Filter>dbr_parser</Filter>
     </ClCompile>
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cml_matrix2\cml_matrix2.h">

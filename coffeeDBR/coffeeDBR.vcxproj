@@ -157,12 +157,10 @@
     <ClInclude Include="src\pugixml\pugixml.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cml_matrix2\cml_matrix2.cpp" />
     <ClCompile Include="src\cml_ncgm\cml_ncgm.cpp" />
     <ClCompile Include="src\cml_ncgm\fletcherReeves.cpp" />
     <ClCompile Include="src\cml_oneMin\cml_golden.cpp" />
     <ClCompile Include="src\cml_oneMin\cml_oneMin.cpp" />
-    <ClCompile Include="src\cml_vector\cml_Vector.cpp" />
     <ClCompile Include="src\dbr_parser\dbrParser.cpp" />
     <ClCompile Include="src\laser\laser.cpp" />
     <ClCompile Include="src\main.cpp" />
