@@ -2,13 +2,14 @@
 #include <assert.h>
 #include <cstring>
 #include <cmath>
+#include <Windows.h>
 #define ABS(x) x > 0 ? x : -x
 #define MIN(x,y) x>y ? y : x
 cml::Vector::Vector() : m_elements(0), m_vectorSize(0) {}
 cml::Vector::Vector(const size_t vectorSize) : m_vectorSize(vectorSize)
 {
 	m_elements = new long double[vectorSize];
-	memcpy(m_elements, 0, sizeof(long double)*vectorSize);
+	ZeroMemory(m_elements, vectorSize * sizeof(long double));
 }
 
 cml::Vector::Vector(const Vector& vec)

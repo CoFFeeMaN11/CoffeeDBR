@@ -2,16 +2,25 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="cml_matrix2">
-      <UniqueIdentifier>{4c507faf-16ee-424f-877f-2544950496e0}</UniqueIdentifier>
+      <UniqueIdentifier>{d51760e9-042c-4b92-b7c3-4d8ec3716bae}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_ncgm">
-      <UniqueIdentifier>{a92b53b3-c525-40b5-aafb-40a65885ca81}</UniqueIdentifier>
+      <UniqueIdentifier>{79899a47-bb1c-4c02-adab-9e18f78ef605}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_vector">
-      <UniqueIdentifier>{369bbdc4-3fd3-4401-9c3d-e470dc2f245d}</UniqueIdentifier>
+      <UniqueIdentifier>{488ffcb3-9941-44cf-a156-72c58215fa96}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_oneMin">
-      <UniqueIdentifier>{b6f8f214-0d2e-4de1-bea7-4fdaa5a2b3af}</UniqueIdentifier>
+      <UniqueIdentifier>{173423e9-a9e8-4c0c-82b8-15f21863dc86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{9b26ef52-c78c-46ce-8a78-3f7fbcc28b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="laser">
+      <UniqueIdentifier>{3a9b010e-9e88-46de-aec5-f0de07b68c82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbr_parser">
+      <UniqueIdentifier>{047f1121-51de-4d22-b2b7-273298881a0f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,25 +36,33 @@
     <ClCompile Include="src\cml_vector\cml_Vector.cpp">
       <Filter>cml_vector</Filter>
     </ClCompile>
+    <ClCompile Include="src\cml_oneMin\cml_golden.cpp">
+      <Filter>cml_oneMin</Filter>
+    </ClCompile>
     <ClCompile Include="src\cml_oneMin\cml_oneMin.cpp">
       <Filter>cml_oneMin</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\cml_oneMin\cml_golden.cpp">
-      <Filter>cml_oneMin</Filter>
+    <ClCompile Include="src\pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\laser\laser.cpp">
+      <Filter>laser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dbr_parser\dbrParser.cpp">
+      <Filter>dbr_parser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cml_matrix2\cml_matrix2.h">
       <Filter>cml_matrix2</Filter>
     </ClInclude>
-    <ClInclude Include="src\cml_ncgm\cml_ncgm.h">
-      <Filter>cml_ncgm</Filter>
-    </ClInclude>
     <ClInclude Include="src\cml_ncgm\betaFunc.h">
       <Filter>cml_ncgm</Filter>
     </ClInclude>
     <ClInclude Include="src\cml_ncgm\betaFuncs.h">
+      <Filter>cml_ncgm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cml_ncgm\cml_ncgm.h">
       <Filter>cml_ncgm</Filter>
     </ClInclude>
     <ClInclude Include="src\cml_ncgm\fletcherReeves.h">
@@ -54,11 +71,23 @@
     <ClInclude Include="src\cml_vector\cml_Vector.h">
       <Filter>cml_vector</Filter>
     </ClInclude>
+    <ClInclude Include="src\cml_oneMin\cml_golden.h">
+      <Filter>cml_oneMin</Filter>
+    </ClInclude>
     <ClInclude Include="src\cml_oneMin\cml_oneMin.h">
       <Filter>cml_oneMin</Filter>
     </ClInclude>
-    <ClInclude Include="src\cml_oneMin\cml_golden.h">
-      <Filter>cml_oneMin</Filter>
+    <ClInclude Include="src\pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\laser\laser.h">
+      <Filter>laser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dbr_parser\dbrParser.h">
+      <Filter>dbr_parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
