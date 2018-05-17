@@ -2,25 +2,31 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="cml_matrix2">
-      <UniqueIdentifier>{d51760e9-042c-4b92-b7c3-4d8ec3716bae}</UniqueIdentifier>
+      <UniqueIdentifier>{f98469cf-b006-44cc-8007-07ffa64300ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_ncgm">
-      <UniqueIdentifier>{79899a47-bb1c-4c02-adab-9e18f78ef605}</UniqueIdentifier>
+      <UniqueIdentifier>{a390b5c2-ee96-4f6a-8125-40c83220b1ed}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_vector">
-      <UniqueIdentifier>{488ffcb3-9941-44cf-a156-72c58215fa96}</UniqueIdentifier>
+      <UniqueIdentifier>{d97b7735-dda5-4950-9faa-28de9c23ed89}</UniqueIdentifier>
     </Filter>
     <Filter Include="cml_oneMin">
-      <UniqueIdentifier>{173423e9-a9e8-4c0c-82b8-15f21863dc86}</UniqueIdentifier>
+      <UniqueIdentifier>{805c4241-262a-4a15-af80-895bb07cbee3}</UniqueIdentifier>
     </Filter>
     <Filter Include="pugixml">
-      <UniqueIdentifier>{9b26ef52-c78c-46ce-8a78-3f7fbcc28b15}</UniqueIdentifier>
+      <UniqueIdentifier>{094cf089-b595-4944-ae32-eec6a5bb4f5b}</UniqueIdentifier>
     </Filter>
     <Filter Include="laser">
-      <UniqueIdentifier>{3a9b010e-9e88-46de-aec5-f0de07b68c82}</UniqueIdentifier>
+      <UniqueIdentifier>{4871cd19-c771-48e9-b3a9-4e9c04f3a615}</UniqueIdentifier>
     </Filter>
     <Filter Include="dbr_parser">
-      <UniqueIdentifier>{047f1121-51de-4d22-b2b7-273298881a0f}</UniqueIdentifier>
+      <UniqueIdentifier>{14d2d61c-d35b-4e59-a5de-fb9559024cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbr_field">
+      <UniqueIdentifier>{6d7aa385-a54e-4827-81e8-8901f8fdb5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="laserParams">
+      <UniqueIdentifier>{629d9294-a971-4e18-acf4-5995b08fe465}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +37,15 @@
       <Filter>cml_ncgm</Filter>
     </ClCompile>
     <ClCompile Include="src\cml_ncgm\fletcherReeves.cpp">
+      <Filter>cml_ncgm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cml_ncgm\polak.cpp">
+      <Filter>cml_ncgm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cml_ncgm\betaFuncs.cpp">
+      <Filter>cml_ncgm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cml_ncgm\hestenes.cpp">
       <Filter>cml_ncgm</Filter>
     </ClCompile>
     <ClCompile Include="src\cml_vector\cml_Vector.cpp">
@@ -51,6 +66,12 @@
     <ClCompile Include="src\dbr_parser\dbrParser.cpp">
       <Filter>dbr_parser</Filter>
     </ClCompile>
+    <ClCompile Include="src\dbr_field\dbr_field.cpp">
+      <Filter>dbr_field</Filter>
+    </ClCompile>
+    <ClCompile Include="src\laserParams\laserParams.cpp">
+      <Filter>laserParams</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cml_matrix2\cml_matrix2.h">
@@ -66,6 +87,12 @@
       <Filter>cml_ncgm</Filter>
     </ClInclude>
     <ClInclude Include="src\cml_ncgm\fletcherReeves.h">
+      <Filter>cml_ncgm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cml_ncgm\polak.h">
+      <Filter>cml_ncgm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cml_ncgm\hestenes.h">
       <Filter>cml_ncgm</Filter>
     </ClInclude>
     <ClInclude Include="src\cml_vector\cml_Vector.h">
@@ -88,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="src\dbr_parser\dbrParser.h">
       <Filter>dbr_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dbr_field\dbr_field.h">
+      <Filter>dbr_field</Filter>
+    </ClInclude>
+    <ClInclude Include="src\laserParams\laserParams.h">
+      <Filter>laserParams</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

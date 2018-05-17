@@ -148,22 +148,31 @@
     <ClInclude Include="src\cml_ncgm\betaFuncs.h" />
     <ClInclude Include="src\cml_ncgm\cml_ncgm.h" />
     <ClInclude Include="src\cml_ncgm\fletcherReeves.h" />
+    <ClInclude Include="src\cml_ncgm\hestenes.h" />
+    <ClInclude Include="src\cml_ncgm\polak.h" />
     <ClInclude Include="src\cml_oneMin\cml_golden.h" />
     <ClInclude Include="src\cml_oneMin\cml_oneMin.h" />
     <ClInclude Include="src\cml_vector\cml_Vector.h" />
+    <ClInclude Include="src\dbr_field\dbr_field.h" />
     <ClInclude Include="src\dbr_parser\dbrParser.h" />
+    <ClInclude Include="src\laserParams\laserParams.h" />
     <ClInclude Include="src\laser\laser.h" />
     <ClInclude Include="src\pugixml\pugiconfig.hpp" />
     <ClInclude Include="src\pugixml\pugixml.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cml_matrix2\cml_matrix2.cpp" />
+    <ClCompile Include="src\cml_ncgm\betaFuncs.cpp" />
     <ClCompile Include="src\cml_ncgm\cml_ncgm.cpp" />
     <ClCompile Include="src\cml_ncgm\fletcherReeves.cpp" />
+    <ClCompile Include="src\cml_ncgm\hestenes.cpp" />
+    <ClCompile Include="src\cml_ncgm\polak.cpp" />
     <ClCompile Include="src\cml_oneMin\cml_golden.cpp" />
     <ClCompile Include="src\cml_oneMin\cml_oneMin.cpp" />
     <ClCompile Include="src\cml_vector\cml_Vector.cpp" />
+    <ClCompile Include="src\dbr_field\dbr_field.cpp" />
     <ClCompile Include="src\dbr_parser\dbrParser.cpp" />
+    <ClCompile Include="src\laserParams\laserParams.cpp" />
     <ClCompile Include="src\laser\laser.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pugixml\pugixml.cpp" />

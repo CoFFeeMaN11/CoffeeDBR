@@ -4,6 +4,7 @@
 #include "../pugixml/pugixml.hpp"
 #include "../pugixml/pugiconfig.hpp"
 #include "../laser/laser.h"
+#include "../laserParams/laserParams.h"
 class DbrParser
 {
 public:
@@ -14,6 +15,7 @@ public:
 	bool LoadFile(const std::string& filepath);
 	void LoadMaterials(Laser& laser);
 	void LoadStructure(Laser& laser);
+	void LoadParams(LaserParams& params);
 private:
 	pugi::xml_document file;
 	pugi::xml_node mainNode;

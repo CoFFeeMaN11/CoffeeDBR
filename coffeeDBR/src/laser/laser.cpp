@@ -27,3 +27,15 @@ void Laser::AddLayer(unsigned char matId, long double thinkess)
 	}
 	laserStruct.push_back(std::pair<unsigned char, long double>(matId, thinkess));
 }
+
+size_t Laser::GetStructSize()
+{
+	return laserStruct.size();
+}
+
+Material Laser::GetMaterial(size_t layerid)
+{
+	Material ret = materials[laserStruct[layerid].first];
+	ret.thinkess = laserStruct[layerid].second;
+	return ret;
+}

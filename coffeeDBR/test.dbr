@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DBR>
 	<vawe start="380" end="432" step="0.1"/>
-	<mod resuduum="1e-11"/>
+	<mod resuduum="1e-11" fuse="500"/>
 	<materials>
 		<material id="1" name="Nb2O5" refReal="2.428" refIm="0" thickness="42.6"/>
 		<material id="2" name="SiO2" refReal="1.556" refIm="0" thickness="66.5"/>
@@ -11,7 +11,7 @@
 		<material id="6" name="pAlGaN " refReal="2.437" refIm="0" thickness="20.0"/>
 		<material id="7" name="pGaN" refReal="2.506" refIm="0" thickness="35.0"/>
 		<material id="8" name="ITO" refReal="2.095" refIm="0" thickness="49.5"/>
-		<material id="9" name="Au" refReal="1.635" refIm="-1.957" thickness="20.0"/>
+		<material id="9" name="Au" refReal="1.635" refIm="0" thickness="20.0"/>
 	</materials>
 	<structure>
 		1 2 1 2 1 2 1 2 1 2 1 2 1 2 3 4 4:10.0 5 4:15.0 6 7 4:20.4 8 1:21.3 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 9

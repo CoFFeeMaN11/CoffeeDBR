@@ -5,20 +5,20 @@
 class IBetaFunction
 {
 public:
-	IBetaFunction() : x_n(), x_n1()	{}
+	IBetaFunction() : currX(), prevX()	{}
 	virtual void UpdateData(cml::Vector * const x, size_t tableSize)
 	{
 		assert(tableSize > 1);
-		if (x_n.getSize() == 0)
-			x_n.Init(x[0].getSize());
-		if (x_n1.getSize() == 0)
-			x_n1.Init(x[0].getSize());
-		x_n = x[0];
-		x_n1 = x[1];
+		if (currX.getSize() == 0)
+			currX.Init(x[0].getSize());
+		if (prevX.getSize() == 0)
+			prevX.Init(x[0].getSize());
+		currX = x[0];
+		prevX = x[1];
 	}
 	virtual long double Calc() = 0;
 	virtual ~IBetaFunction() {}
 protected:
-	cml::Vector x_n, x_n1; //x_n1 = x_(n-1)
+	cml::Vector currX, prevX; //x_n1 = x_(n-1)
 };
 #endif

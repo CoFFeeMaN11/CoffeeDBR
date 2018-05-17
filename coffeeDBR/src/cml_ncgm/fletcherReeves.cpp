@@ -7,7 +7,7 @@ Fletcher::Fletcher() : IBetaFunction()
 
 long double Fletcher::Calc()
 {
-	return cml::Vector::Dot(x_n,x_n)/cml::Vector::Dot(x_n1, x_n1);
+	return cml::Vector::Dot(currX,currX)/cml::Vector::Dot(prevX, prevX);
 }
 
 Fletcher::~Fletcher()

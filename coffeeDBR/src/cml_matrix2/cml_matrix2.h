@@ -7,16 +7,19 @@ namespace cml
 	class Matrix2
 	{
 	public:
-		Matrix2(long double a11,long double a12,long double a21,long double a22);
+		Matrix2();
+		Matrix2(complex a11, complex a12, complex a21, complex a22);
 		Matrix2(const Matrix2& mat);
 		~Matrix2();
 		static Matrix2 Identity();
-		Vector operator*(const Vector&);
-		Matrix2 operator*(const Matrix2&);
-		long double& operator[](const size_t);
-		const long double& operator[](size_t) const;
+		ComplexVector operator*(const ComplexVector&);
+		Matrix2 operator*=(const Matrix2&);
+		complex& operator[](const size_t);
+		const complex& operator[](size_t) const;
 	private:
-		long double m_elements[4];
+		complex m_elements[4];
 	};
 }
+cml::Matrix2 operator*(const cml::Matrix2& a, const cml::Matrix2& b);
+cml::Matrix2 operator*(const long double& a, const cml::Matrix2& b);
 #endif

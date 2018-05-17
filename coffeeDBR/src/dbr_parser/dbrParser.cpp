@@ -37,9 +37,9 @@ void DbrParser::LoadMaterials(Laser& laser)
 	do
 	{
 		temp.id = buffer.attribute("id").as_uint();
-		temp.name = buffer.attribute("name").as_string();
+		temp.name = buffer.attribute("name").as_string("mat");
 		temp.refIndexRe = buffer.attribute("refReal").as_double();
-		temp.refIndexIm = buffer.attribute("refIm").as_double();
+		temp.refIndexIm = buffer.attribute("refIm").as_double(0.0);
 		temp.thinkess = buffer.attribute("thickness").as_double();
 		laser.AddMaterial(temp);
 	} while ((buffer = buffer.next_sibling("material")));
@@ -59,4 +59,19 @@ void DbrParser::LoadStructure(Laser & laser)
 		ParseStruElem(buffer, id, thinkness);
 		laser.AddLayer(id, thinkness);
 	}
+}
+
+void DbrParser::LoadParams(LaserParams & params)
+{
+	pugi::xml_node vaweNode = mainNode.child("vawe");
+	VaweParams vawe;
+	vawe.startLength = vaweNode.attribute("start").as_double();
+	vawe.stopLength = vaweNode.attribute("end").as_double();
+	vawe.step = vaweNode.attribute("step").as_double();
+	params.SetVaweParams(vawe);
+	ModFinderParams mod;
+	pugi::xml_node modNode = mainNode.child("mod");
+	mod.resuduum = modNode.attribute("resuduum").as_double(1e-10);
+	mod.fuse = modNode.attribute("fuse").as_ullong(100);
+	params.SetModFinderParams(mod);
 }

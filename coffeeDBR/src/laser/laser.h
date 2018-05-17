@@ -2,7 +2,7 @@
 #define _LASER_H_H_
 #include <complex>
 #include <string>
-#include <list>
+#include <vector>
 #include <map>
 struct Material
 {
@@ -18,8 +18,10 @@ public:
 	~Laser();
 	void AddMaterial(const Material& material);
 	void AddLayer(unsigned char matId, long double thinkess = -1.0L);
+	size_t GetStructSize();
+	Material GetMaterial(size_t layerid);
 private:
 	std::map<unsigned char, Material> materials;
-	std::list < std::pair<unsigned char, long double> > laserStruct;
+	std::vector < std::pair<unsigned char, long double> > laserStruct;
 };
 #endif // !_LASER_H_H_

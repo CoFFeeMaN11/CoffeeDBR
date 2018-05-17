@@ -13,6 +13,7 @@ public:
 	{
 		func = f;
 	}
+	void SetBetaFunction(eBetaFunction bf);
 	const cml::Vector&  GetX() const
 	{
 		return xvector;
@@ -22,13 +23,13 @@ public:
 		return step;
 	}
 	const long double GetMinValue() const;
-	void* GetParams() const
+	void SetParams(void * pa)
 	{
-		return params;
+		params = pa;
 	}
 	virtual ~ConjugeteGradientSolve();
-	void StartSolve(cml::Vector _startPoint);
-	void Iteration();
+	bool StartSolve(cml::Vector _startPoint);
+	bool Iteration();
 private:
 	cml::Vector Gradient(cml::Vector point);
 	long double Partial(cml::Vector dir, cml::Vector point);
